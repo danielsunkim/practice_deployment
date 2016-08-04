@@ -1,6 +1,6 @@
 module.exports = {
   entry: './app/app.jsx',
-  output {
+  output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
@@ -8,7 +8,7 @@ module.exports = {
     root: __dirname,
     alias: {
     },
-    extensions: ['react', 'es2015']
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [
