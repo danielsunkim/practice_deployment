@@ -27,6 +27,8 @@ coverage
 build/Release
 
 # Dependency directories
+bundle.js
+bundle.min.js
 node_modules
 jspm_packages
 
