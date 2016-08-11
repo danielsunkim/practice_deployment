@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 const PORT =  process.env.PORT || 3000;
 
 // open weather map API, open weather map only operates on HTTP and not HTTPS.
