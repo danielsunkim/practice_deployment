@@ -1,12 +1,15 @@
 var express = require('express');
-var app = express();
-const PORT =  process.env.PORT || 3000;
 
-// open weather map API, open weather map only operates on HTTP and not HTTPS.
-app.use((function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] === 'http') {
+
+// Create our app
+var app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(function(req,res,next){
+  if(req.headers['x-forwarded-proto'] === 'http'){
     next();
-  } else {
+  }
+  else{
     res.redirect('http://' + req.hostname + req.url);
   }
 });
@@ -14,5 +17,5 @@ app.use((function (req, res, next) {
 app.use(express.static('public'));
 
 app.listen(PORT, function () {
-  console.log('Listening on port ' + PORT);
+  console.log('Express server is up on port ' + PORT);
 });
